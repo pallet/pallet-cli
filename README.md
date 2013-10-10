@@ -2,8 +2,14 @@
 
 A command line for pallet.  Not ready for use!
 
+## Install
+
 ## Usage
 
+### Control the Pallet Server Process
+
+    bin/pallet server pid
+    bin/pallet server kill
 
 ## License
 
