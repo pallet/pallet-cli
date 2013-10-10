@@ -7,7 +7,10 @@
                  [nrepl-main "0.1.1"
                   :exclusions [org.clojure/clojure]]
                  [alembic "0.2.0"]
-                 [org.clojure/tools.nrepl "0.2.3"]]
+                 [org.clojure/tools.nrepl "0.2.3"
+                  :exclusions [commons-logging]]
+                 [ch.qos.logback/logback-classic "1.0.13"]
+                 [org.slf4j/jcl-over-slf4j "1.7.5"]]
   :plugins [[lein-package "2.1.1"]]
   :hooks [leiningen.package.hooks.deploy
           leiningen.package.hooks.install]
