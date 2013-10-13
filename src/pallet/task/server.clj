@@ -29,6 +29,9 @@
      (= cmd "kill") (do (shutdown-agents)
                         (System/exit 0))
      (= cmd "pid") (println (pid))
+     (= cmd "false") (throw (ex-info "errr" {:exit-code 1}))
+     (= cmd "pwd") (println (System/getProperty "grench.cwd"))
+
      :else (do
              (when cmd
                (println "Unknown command" cmd \newline))
