@@ -139,7 +139,9 @@
                               (read-string project-options))
             defaults (when defaults
                        (read-string defaults))
+            _ (logging/trace "Resolving task")
             task (resolve-task task-name)
+            _ (logging/trace "Resolved task")
             return-value (if (:no-service-required (meta task))
                            (let [_ (require 'pallet.main-invoker)
                                  invoker (find-var

@@ -4,6 +4,7 @@
    [clojure.pprint :refer [pprint]]
    [clojure.stacktrace :refer [print-cause-trace]]
    [clojure.string :refer [trim]]
+   [clojure.tools.logging :refer [tracef]]
    [doric.core :refer [table]]
    [pallet.actions :refer [exec-script]]
    [pallet.api :as api]
@@ -56,16 +57,18 @@
 (defn bash
   {:doc help}
   [{:keys [compute project] :as request} & args]
+  (tracef "bash %s" (vec args))
   (let [[{:keys [selectors quiet groups roles show-output]} args doc]
         (process-args "bash <script command line>" args switches)
         ;; project (pallet-project project)
         ;; spec (when project
         ;;        (project-groups project compute selectors groups roles))
-        ]
+        groups (or ;; spec
+                (service-groups compute))]
+    (tracef "bash running on %s groups" (count groups))
     (if (seq args)
       (-> (lift-groups compute
-                       (or ;; spec
-                        (service-groups compute))
+                       groups
                        args
                        (->
                         request
