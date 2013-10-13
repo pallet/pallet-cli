@@ -5,7 +5,7 @@
 # installed upon first run into the ~/.pallet/self-installs directory.
 
 export PALLET_VERSION="0.9.0-SNAPSHOT"
-PALLET_URL="http://clojars.org/repo/com/palletops/pallet-cli/$PALLET_VERSION/pallet-cli-$PALLET_VERSION-standalone.jar"
+PALLET_URL="http://pallet-cli.s3.amazonaws.com/pallet-cli-$PALLET_VERSION-standalone.jar"
 
 if [[ "$OSTYPE" == "cygwin" ]]; then
   cygwin=true
