@@ -7,6 +7,7 @@
                  [nrepl-main "0.1.1"
                   :exclusions [org.clojure/clojure]]
                  [alembic "0.2.0"]
+                 [doric "0.8.0"]
                  [org.clojure/tools.nrepl "0.2.3"
                   :exclusions [commons-logging]]
                  [ch.qos.logback/logback-classic "1.0.13"]
