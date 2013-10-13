@@ -53,7 +53,7 @@
     (do
       (shutdown-agents)
       (System/exit exit-code))
-    (throw (ex-info "suppressed exit" {:exit-code exit-code}))))
+    exit-code))
 
 (def pallet-switches
   [["-P" "--service" "Service key to use (use add-service to create a service"]
