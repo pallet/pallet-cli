@@ -1,5 +1,5 @@
 (ns pallet.task.exec
-  "Execute bash commands on nodes"
+  "Execute actions an plan functions on nodes"
   (:require
    [clojure.pprint :refer [pprint]]
    [clojure.stacktrace :refer [print-cause-trace]]
@@ -88,7 +88,7 @@
         s (if (namespace s) s (symbol "pallet.actions" action))
         groups (or ;; spec
                 (service-groups compute))]
-    (tracef "bash running on %s groups" (count groups))
+    (tracef "exec running on %s groups" (count groups))
     (if (seq args)
       (-> (lift-groups compute
                        groups
