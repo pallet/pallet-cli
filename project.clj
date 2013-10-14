@@ -4,6 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[com.palletops/pallet "0.9.0-SNAPSHOT"]
+                 [com.palletops/crates "0.1.1"]
                  [nrepl-main "0.1.1"
                   :exclusions [org.clojure/clojure]]
                  [alembic "0.2.0"]
